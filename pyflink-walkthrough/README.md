@@ -9,7 +9,7 @@ In this playground, you will learn how to build and run an end-to-end PyFlink pi
 * Performing a simple aggregation over the source data;
 * Writing the results to Elasticsearch and visualizing them in Kibana.
 
-- Kafka
+### Kafka
 You will be using Kafka to store sample input data about payment transactions. A simple data generator `[generate_source_data.py](generator/generate_source_data.py)` is provided to
 continuously write new records to the `payment_msg` Kafka topic. Each record is structured as follows:
  
@@ -31,17 +31,17 @@ $ docker-compose exec kafka kafka-console-consumer.sh --bootstrap-server kafka:9
 {"createTime":"2020-07-27 09:25:34.698","orderId":1595841867221,"payAmount":37504.42,"payPlatform":0,"provinceId":0}
 ```
 
-- PyFlink
+### PyFlink
 
 The transaction data will be processed with PyFlink using the Python script `[payment_msg_proccessing.py](payment_msg_proccessing.py)`.
 This script will first map the `provinceId` in the input records to its corresponding province name
 using a Python UDF, and them sum the transaction amount for each province using a group aggregate. 
 
-- ElasticSearch
+### ElasticSearch
 
 ElasticSearch is used to store upstream processing results and provide efficient query service.
 
-- Kibana
+### Kibana
 
 Kibana is an open source data visualization dashboard for ElasticSearch. You will use it to visualize 
 the results of your PyFlink pipeline.
