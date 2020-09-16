@@ -112,8 +112,8 @@ Visit the Flink Web UI at [http://localhost:8081/#/overview](http://localhost:80
 
 ## Extension
 
-You are able to edit the [payment_msg_processing.py](payment_msg_proccessing.py) or create new  to 
-perform more complex processing logic locally on your operating system under the `pyflink-walkthrough` 
+You are able to edit the [payment_msg_processing.py](payment_msg_proccessing.py) or create new PyFlink 
+project to perform more complex processing logic locally on your operating system under the `pyflink-walkthrough` 
 directory since it is mounted on the `jobmanager` docker container. Such as:
 * Creating a new Kafka source table;
 * Creating a new index for the Elasticsearch sink;
@@ -126,4 +126,4 @@ $ docker-compose exec jobmanager ./bin/flink run -py /opt/pyflink-walkthrough/pa
 ```
 
 Furthermore, you can also [create new kibana dashboards](https://www.elastic.co/guide/en/kibana/7.8/dashboard-create-new-dashboard.html) 
-to visualize more charts of various dimension based on persistent indexes in Elasticsearch.
+to visualize more charts of various dimension based on the persistent indexes in Elasticsearch.
